@@ -21,7 +21,7 @@ public class EmployeeRepository {
         this.employees.add(employee);
     }
 
-    public Employee getEmployeesById(int id) {
+    public Employee getEmployeeById(int id) {
         return employees.stream().filter(employee->employee.getId()==id).findFirst().orElse(null);
     }
 }
