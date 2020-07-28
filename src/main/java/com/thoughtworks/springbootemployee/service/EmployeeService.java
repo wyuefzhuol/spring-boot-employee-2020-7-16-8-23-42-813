@@ -28,4 +28,8 @@ public class EmployeeService {
     public void updateEmployeeById(int id, Employee employee) {
         employeeRepository.updateEmployeeById(id, employee);
     }
+
+    public void deleteEmployeeById(int id) {
+        employeeRepository.deleteEmployeeById(id);
+    }
 }

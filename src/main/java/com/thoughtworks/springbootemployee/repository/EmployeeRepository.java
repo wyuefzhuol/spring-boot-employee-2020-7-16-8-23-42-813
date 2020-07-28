@@ -22,7 +22,7 @@ public class EmployeeRepository {
     }
 
     public Employee getEmployeeById(int id) {
-        return employees.stream().filter(employee->employee.getId()==id).findFirst().orElse(null);
+        return employees.stream().filter(employee -> employee.getId() == id).findFirst().orElse(null);
     }
 
     public void updateEmployeeById(int id, Employee newEmployee) {
@@ -32,6 +32,15 @@ public class EmployeeRepository {
                 employee.setName(newEmployee.getName());
                 employee.setAge(newEmployee.getAge());
                 employee.setGender(newEmployee.getGender());
+            }
+        }
+    }
+
+    public void deleteEmployeeById(int id) {
+        for (int i = employees.size() - 1; i >= 0; i--) {
+            Employee result = employees.get(i);
+            if (result.getId() == id) {
+                employees.remove(result);
             }
         }
     }
