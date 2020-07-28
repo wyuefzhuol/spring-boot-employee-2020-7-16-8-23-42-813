@@ -24,4 +24,15 @@ public class EmployeeRepository {
     public Employee getEmployeeById(int id) {
         return employees.stream().filter(employee->employee.getId()==id).findFirst().orElse(null);
     }
+
+    public void updateEmployeeById(int id, Employee newEmployee) {
+        for (Employee employee : employees) {
+            if (employee.getId() == id) {
+                employee.setId(newEmployee.getId());
+                employee.setName(newEmployee.getName());
+                employee.setAge(newEmployee.getAge());
+                employee.setGender(newEmployee.getGender());
+            }
+        }
+    }
 }

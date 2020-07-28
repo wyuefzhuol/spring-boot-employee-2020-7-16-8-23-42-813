@@ -24,4 +24,8 @@ public class EmployeeService {
     public Employee getEmployeeById(int id) {
         return employeeRepository.getEmployeeById(id);
     }
+
+    public void updateEmployeeById(int id, Employee employee) {
+        employeeRepository.updateEmployeeById(id, employee);
+    }
 }
