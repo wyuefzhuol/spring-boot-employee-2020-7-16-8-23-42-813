@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class EmployeeRepository {
@@ -20,4 +21,7 @@ public class EmployeeRepository {
         this.employees.add(employee);
     }
 
+    public List<Employee> getEmployeesById(int id) {
+        return employees.stream().filter(employee->employee.getId()==id).collect(Collectors.toList());
+    }
 }
