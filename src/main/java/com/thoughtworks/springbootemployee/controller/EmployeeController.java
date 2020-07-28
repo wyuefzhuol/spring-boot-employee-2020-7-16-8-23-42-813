@@ -5,6 +5,8 @@ import com.thoughtworks.springbootemployee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
@@ -17,4 +19,8 @@ public class EmployeeController {
         employeeService.addEmployee(employee);
     }
 
+    @GetMapping()
+    public List<Employee> getEmployees(){
+        return  employeeService.getEmployees();
+    }
 }
