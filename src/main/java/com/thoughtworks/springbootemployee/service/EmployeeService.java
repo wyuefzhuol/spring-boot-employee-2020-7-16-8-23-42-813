@@ -1,35 +1,18 @@
 package com.thoughtworks.springbootemployee.service;
 
 import com.thoughtworks.springbootemployee.entity.Employee;
-import com.thoughtworks.springbootemployee.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class EmployeeService {
+public interface EmployeeService {
 
-    @Autowired
-    EmployeeRepository employeeRepository;
+    void addEmployee(Employee employee);
 
-    public void addEmployee(Employee employee) {
-        employeeRepository.addEmployee(employee);
-    }
+    List<Employee> getEmployees();
 
-    public List<Employee> getEmployees() {
-        return employeeRepository.getEmployees();
-    }
+    Employee getEmployeeById(int id);
 
-    public Employee getEmployeeById(int id) {
-        return employeeRepository.getEmployeeById(id);
-    }
+    void updateEmployeeById(int id, Employee employee);
 
-    public void updateEmployeeById(int id, Employee employee) {
-        employeeRepository.updateEmployeeById(id, employee);
-    }
-
-    public void deleteEmployeeById(int id) {
-        employeeRepository.deleteEmployeeById(id);
-    }
+    void deleteEmployeeById(int id);
 }
